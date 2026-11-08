@@ -1,0 +1,25 @@
+# مخطط Render (اختياري). لا يحتوي أي أسرار: القيم الحساسة تُطلب من لوحة التحكم
+# عبر sync: false، و PORT يضبطه Render تلقائياً.
+services:
+  - type: web
+    name: marrakeshia
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
